@@ -1082,7 +1082,7 @@ def run():
             message += f"【连续签到】：{i[4]}/30\n"
             message += f"\n"
 
-        send(title=title, content=message)
+
 
 
 if __name__ == "__main__":
