@@ -1073,16 +1073,16 @@ def run():
         print("\n"*4)
     if _notify_time.split()[0] == str(notify_time) and int(_notify_time.split()[1]) > 30:
         # if 1:
-         message = ''
-         for i in table:
-            message += f"【账户】：{i[0].replace(' ', ''):<9}\n"
-            message += f"【当前剩余】：{i[1]:<6.2f}\n"
-            message += f"【今天】：＋{i[2]:<4.2f}\n"
-            message += f"【历史】：{i[3]:<7.2f}\n"
-            message += f"【连续签到】：{i[4]}/30\n"
-            message += f"\n"
+        message = ''
+        for i in table:
+            message += f"[{i[0].replace(' ',''):<9}]: {i[1]:<6.2f} (＋{i[2]:<4.2f}) {i[3]:<7.2f} {i[4]}\\30\n"
+        message += "⭕tips:第30天需要手动签到 by zero_s1, (*^_^*)欢迎打赏 "
+        if len(table) <= 4:
+            message = "【设备】| 当前剩余 | 今天| 历史| 连续签到\n"+message
 
-
+        bark("⏰ 喜马拉雅极速版", message)
+        serverJ("⏰ 喜马拉雅极速版", message)
+        telegram_bot("⏰ 喜马拉雅极速版", message)
 
 
 if __name__ == "__main__":
